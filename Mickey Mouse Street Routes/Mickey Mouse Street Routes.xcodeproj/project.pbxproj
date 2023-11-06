@@ -1,0 +1,632 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA300C942AF9797A009F45AC /* Mickey_Mouse_Street_RoutesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300C932AF9797A009F45AC /* Mickey_Mouse_Street_RoutesApp.swift */; };
+		AA300C962AF9797A009F45AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300C952AF9797A009F45AC /* ContentView.swift */; };
+		AA300C982AF9797D009F45AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA300C972AF9797D009F45AC /* Assets.xcassets */; };
+		AA300C9B2AF9797D009F45AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA300C9A2AF9797D009F45AC /* Preview Assets.xcassets */; };
+		AA300CA52AF9797E009F45AC /* Mickey_Mouse_Street_RoutesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CA42AF9797E009F45AC /* Mickey_Mouse_Street_RoutesTests.swift */; };
+		AA300CAF2AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CAE2AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITests.swift */; };
+		AA300CB12AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CB02AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITestsLaunchTests.swift */; };
+		AA300CBF2AF97B40009F45AC /* GoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CBE2AF97B40009F45AC /* GoView.swift */; };
+		AA300CC22AF97B59009F45AC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CC12AF97B59009F45AC /* SettingsView.swift */; };
+		AA300CC42AF97D49009F45AC /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CC32AF97D49009F45AC /* SettingsViewModel.swift */; };
+		AA300CC62AF9880D009F45AC /* GoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CC52AF9880D009F45AC /* GoViewModel.swift */; };
+		AA300CC82AF98D74009F45AC /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CC72AF98D74009F45AC /* Layout.swift */; };
+		AA300CCA2AF98F20009F45AC /* WaypointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CC92AF98F1F009F45AC /* WaypointViewModel.swift */; };
+		AA300CCC2AF98F31009F45AC /* WaypointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CCB2AF98F31009F45AC /* WaypointView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA300CA12AF9797E009F45AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA300C882AF9797A009F45AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA300C8F2AF9797A009F45AC;
+			remoteInfo = "Mickey Mouse Street Routes";
+		};
+		AA300CAB2AF9797E009F45AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA300C882AF9797A009F45AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA300C8F2AF9797A009F45AC;
+			remoteInfo = "Mickey Mouse Street Routes";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA300C902AF9797A009F45AC /* Mickey Mouse Street Routes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mickey Mouse Street Routes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA300C932AF9797A009F45AC /* Mickey_Mouse_Street_RoutesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mickey_Mouse_Street_RoutesApp.swift; sourceTree = "<group>"; };
+		AA300C952AF9797A009F45AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA300C972AF9797D009F45AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA300C9A2AF9797D009F45AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AA300CA02AF9797E009F45AC /* Mickey Mouse Street RoutesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mickey Mouse Street RoutesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA300CA42AF9797E009F45AC /* Mickey_Mouse_Street_RoutesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mickey_Mouse_Street_RoutesTests.swift; sourceTree = "<group>"; };
+		AA300CAA2AF9797E009F45AC /* Mickey Mouse Street RoutesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mickey Mouse Street RoutesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA300CAE2AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mickey_Mouse_Street_RoutesUITests.swift; sourceTree = "<group>"; };
+		AA300CB02AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mickey_Mouse_Street_RoutesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AA300CBE2AF97B40009F45AC /* GoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoView.swift; sourceTree = "<group>"; };
+		AA300CC12AF97B59009F45AC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA300CC32AF97D49009F45AC /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AA300CC52AF9880D009F45AC /* GoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewModel.swift; sourceTree = "<group>"; };
+		AA300CC72AF98D74009F45AC /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		AA300CC92AF98F1F009F45AC /* WaypointViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointViewModel.swift; sourceTree = "<group>"; };
+		AA300CCB2AF98F31009F45AC /* WaypointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA300C8D2AF9797A009F45AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA300C9D2AF9797E009F45AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA300CA72AF9797E009F45AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA300C872AF9797A009F45AC = {
+			isa = PBXGroup;
+			children = (
+				AA300C922AF9797A009F45AC /* Mickey Mouse Street Routes */,
+				AA300CA32AF9797E009F45AC /* Mickey Mouse Street RoutesTests */,
+				AA300CAD2AF9797E009F45AC /* Mickey Mouse Street RoutesUITests */,
+				AA300C912AF9797A009F45AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA300C912AF9797A009F45AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA300C902AF9797A009F45AC /* Mickey Mouse Street Routes.app */,
+				AA300CA02AF9797E009F45AC /* Mickey Mouse Street RoutesTests.xctest */,
+				AA300CAA2AF9797E009F45AC /* Mickey Mouse Street RoutesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA300C922AF9797A009F45AC /* Mickey Mouse Street Routes */ = {
+			isa = PBXGroup;
+			children = (
+				AA300CC02AF97B4E009F45AC /* Settings */,
+				AA300CBD2AF97B30009F45AC /* Go */,
+				AA300C932AF9797A009F45AC /* Mickey_Mouse_Street_RoutesApp.swift */,
+				AA300C952AF9797A009F45AC /* ContentView.swift */,
+				AA300C972AF9797D009F45AC /* Assets.xcassets */,
+				AA300C992AF9797D009F45AC /* Preview Content */,
+				AA300CC72AF98D74009F45AC /* Layout.swift */,
+			);
+			path = "Mickey Mouse Street Routes";
+			sourceTree = "<group>";
+		};
+		AA300C992AF9797D009F45AC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AA300C9A2AF9797D009F45AC /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AA300CA32AF9797E009F45AC /* Mickey Mouse Street RoutesTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA300CA42AF9797E009F45AC /* Mickey_Mouse_Street_RoutesTests.swift */,
+			);
+			path = "Mickey Mouse Street RoutesTests";
+			sourceTree = "<group>";
+		};
+		AA300CAD2AF9797E009F45AC /* Mickey Mouse Street RoutesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AA300CAE2AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITests.swift */,
+				AA300CB02AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITestsLaunchTests.swift */,
+			);
+			path = "Mickey Mouse Street RoutesUITests";
+			sourceTree = "<group>";
+		};
+		AA300CBD2AF97B30009F45AC /* Go */ = {
+			isa = PBXGroup;
+			children = (
+				AA300CBE2AF97B40009F45AC /* GoView.swift */,
+				AA300CC52AF9880D009F45AC /* GoViewModel.swift */,
+				AA300CC92AF98F1F009F45AC /* WaypointViewModel.swift */,
+				AA300CCB2AF98F31009F45AC /* WaypointView.swift */,
+			);
+			path = Go;
+			sourceTree = "<group>";
+		};
+		AA300CC02AF97B4E009F45AC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AA300CC12AF97B59009F45AC /* SettingsView.swift */,
+				AA300CC32AF97D49009F45AC /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA300C8F2AF9797A009F45AC /* Mickey Mouse Street Routes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA300CB42AF9797E009F45AC /* Build configuration list for PBXNativeTarget "Mickey Mouse Street Routes" */;
+			buildPhases = (
+				AA300C8C2AF9797A009F45AC /* Sources */,
+				AA300C8D2AF9797A009F45AC /* Frameworks */,
+				AA300C8E2AF9797A009F45AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mickey Mouse Street Routes";
+			productName = "Mickey Mouse Street Routes";
+			productReference = AA300C902AF9797A009F45AC /* Mickey Mouse Street Routes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA300C9F2AF9797E009F45AC /* Mickey Mouse Street RoutesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA300CB72AF9797E009F45AC /* Build configuration list for PBXNativeTarget "Mickey Mouse Street RoutesTests" */;
+			buildPhases = (
+				AA300C9C2AF9797E009F45AC /* Sources */,
+				AA300C9D2AF9797E009F45AC /* Frameworks */,
+				AA300C9E2AF9797E009F45AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA300CA22AF9797E009F45AC /* PBXTargetDependency */,
+			);
+			name = "Mickey Mouse Street RoutesTests";
+			productName = "Mickey Mouse Street RoutesTests";
+			productReference = AA300CA02AF9797E009F45AC /* Mickey Mouse Street RoutesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AA300CA92AF9797E009F45AC /* Mickey Mouse Street RoutesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA300CBA2AF9797E009F45AC /* Build configuration list for PBXNativeTarget "Mickey Mouse Street RoutesUITests" */;
+			buildPhases = (
+				AA300CA62AF9797E009F45AC /* Sources */,
+				AA300CA72AF9797E009F45AC /* Frameworks */,
+				AA300CA82AF9797E009F45AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA300CAC2AF9797E009F45AC /* PBXTargetDependency */,
+			);
+			name = "Mickey Mouse Street RoutesUITests";
+			productName = "Mickey Mouse Street RoutesUITests";
+			productReference = AA300CAA2AF9797E009F45AC /* Mickey Mouse Street RoutesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA300C882AF9797A009F45AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					AA300C8F2AF9797A009F45AC = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					AA300C9F2AF9797E009F45AC = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = AA300C8F2AF9797A009F45AC;
+					};
+					AA300CA92AF9797E009F45AC = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = AA300C8F2AF9797A009F45AC;
+					};
+				};
+			};
+			buildConfigurationList = AA300C8B2AF9797A009F45AC /* Build configuration list for PBXProject "Mickey Mouse Street Routes" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA300C872AF9797A009F45AC;
+			productRefGroup = AA300C912AF9797A009F45AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA300C8F2AF9797A009F45AC /* Mickey Mouse Street Routes */,
+				AA300C9F2AF9797E009F45AC /* Mickey Mouse Street RoutesTests */,
+				AA300CA92AF9797E009F45AC /* Mickey Mouse Street RoutesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA300C8E2AF9797A009F45AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA300C9B2AF9797D009F45AC /* Preview Assets.xcassets in Resources */,
+				AA300C982AF9797D009F45AC /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA300C9E2AF9797E009F45AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA300CA82AF9797E009F45AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA300C8C2AF9797A009F45AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA300CC42AF97D49009F45AC /* SettingsViewModel.swift in Sources */,
+				AA300CCA2AF98F20009F45AC /* WaypointViewModel.swift in Sources */,
+				AA300CBF2AF97B40009F45AC /* GoView.swift in Sources */,
+				AA300CC62AF9880D009F45AC /* GoViewModel.swift in Sources */,
+				AA300CCC2AF98F31009F45AC /* WaypointView.swift in Sources */,
+				AA300CC22AF97B59009F45AC /* SettingsView.swift in Sources */,
+				AA300CC82AF98D74009F45AC /* Layout.swift in Sources */,
+				AA300C962AF9797A009F45AC /* ContentView.swift in Sources */,
+				AA300C942AF9797A009F45AC /* Mickey_Mouse_Street_RoutesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA300C9C2AF9797E009F45AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA300CA52AF9797E009F45AC /* Mickey_Mouse_Street_RoutesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA300CA62AF9797E009F45AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA300CAF2AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITests.swift in Sources */,
+				AA300CB12AF9797E009F45AC /* Mickey_Mouse_Street_RoutesUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA300CA22AF9797E009F45AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA300C8F2AF9797A009F45AC /* Mickey Mouse Street Routes */;
+			targetProxy = AA300CA12AF9797E009F45AC /* PBXContainerItemProxy */;
+		};
+		AA300CAC2AF9797E009F45AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA300C8F2AF9797A009F45AC /* Mickey Mouse Street Routes */;
+			targetProxy = AA300CAB2AF9797E009F45AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AA300CB22AF9797E009F45AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA300CB32AF9797E009F45AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA300CB52AF9797E009F45AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mickey Mouse Street Routes/Preview Content\"";
+				DEVELOPMENT_TEAM = TM29ZMC7X2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "evh.Mickey-Mouse-Street-Routes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA300CB62AF9797E009F45AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Mickey Mouse Street Routes/Preview Content\"";
+				DEVELOPMENT_TEAM = TM29ZMC7X2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "evh.Mickey-Mouse-Street-Routes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA300CB82AF9797E009F45AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TM29ZMC7X2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "evh.Mickey-Mouse-Street-RoutesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mickey Mouse Street Routes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mickey Mouse Street Routes";
+			};
+			name = Debug;
+		};
+		AA300CB92AF9797E009F45AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TM29ZMC7X2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "evh.Mickey-Mouse-Street-RoutesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mickey Mouse Street Routes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Mickey Mouse Street Routes";
+			};
+			name = Release;
+		};
+		AA300CBB2AF9797E009F45AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TM29ZMC7X2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "evh.Mickey-Mouse-Street-RoutesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mickey Mouse Street Routes";
+			};
+			name = Debug;
+		};
+		AA300CBC2AF9797E009F45AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TM29ZMC7X2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "evh.Mickey-Mouse-Street-RoutesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mickey Mouse Street Routes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA300C8B2AF9797A009F45AC /* Build configuration list for PBXProject "Mickey Mouse Street Routes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA300CB22AF9797E009F45AC /* Debug */,
+				AA300CB32AF9797E009F45AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA300CB42AF9797E009F45AC /* Build configuration list for PBXNativeTarget "Mickey Mouse Street Routes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA300CB52AF9797E009F45AC /* Debug */,
+				AA300CB62AF9797E009F45AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA300CB72AF9797E009F45AC /* Build configuration list for PBXNativeTarget "Mickey Mouse Street RoutesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA300CB82AF9797E009F45AC /* Debug */,
+				AA300CB92AF9797E009F45AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA300CBA2AF9797E009F45AC /* Build configuration list for PBXNativeTarget "Mickey Mouse Street RoutesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA300CBB2AF9797E009F45AC /* Debug */,
+				AA300CBC2AF9797E009F45AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA300C882AF9797A009F45AC /* Project object */;
+}
