@@ -21,6 +21,20 @@
 		AA300CC82AF98D74009F45AC /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CC72AF98D74009F45AC /* Layout.swift */; };
 		AA300CCA2AF98F20009F45AC /* WaypointViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CC92AF98F1F009F45AC /* WaypointViewModel.swift */; };
 		AA300CCC2AF98F31009F45AC /* WaypointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CCB2AF98F31009F45AC /* WaypointView.swift */; };
+		AA300CDC2AF9C1A9009F45AC /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CDB2AF9C1A9009F45AC /* NetworkRequest.swift */; };
+		AA300CDE2AF9C1C9009F45AC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CDD2AF9C1C9009F45AC /* HTTPMethod.swift */; };
+		AA300CE02AF9C205009F45AC /* APIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CDF2AF9C205009F45AC /* APIInteractor.swift */; };
+		AA3CD2F72AFACEC200A974E8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2F62AFACEC200A974E8 /* LocationManager.swift */; };
+		AA3CD2F92AFAD17700A974E8 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2F82AFAD17700A974E8 /* CalloutView.swift */; };
+		AA3CD2FE2AFAD75400A974E8 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2FD2AFAD75400A974E8 /* Route.swift */; };
+		AA3CD3002AFC1E6600A974E8 /* StatusParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2FF2AFC1E6600A974E8 /* StatusParser.swift */; };
+		AA3CD3022AFC222900A974E8 /* String+LocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD3012AFC222900A974E8 /* String+LocalizedError.swift */; };
+		AA3CD3042AFC246F00A974E8 /* RequestRouteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD3032AFC246F00A974E8 /* RequestRouteRequest.swift */; };
+		AA3CD3062AFC279E00A974E8 /* WaypointPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD3052AFC279E00A974E8 /* WaypointPreviewView.swift */; };
+		AA591B782AFACA9600002816 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B772AFACA9600002816 /* URLRequestBuilder.swift */; };
+		AA591B7A2AFACADE00002816 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B792AFACADE00002816 /* NetworkResponse.swift */; };
+		AA591B7C2AFACB0E00002816 /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B7B2AFACB0E00002816 /* ServerURL.swift */; };
+		AA591B7F2AFACC9100002816 /* EnableTeamRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B7E2AFACC9100002816 /* EnableTeamRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +72,21 @@
 		AA300CC72AF98D74009F45AC /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		AA300CC92AF98F1F009F45AC /* WaypointViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointViewModel.swift; sourceTree = "<group>"; };
 		AA300CCB2AF98F31009F45AC /* WaypointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointView.swift; sourceTree = "<group>"; };
+		AA300CDB2AF9C1A9009F45AC /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		AA300CDD2AF9C1C9009F45AC /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		AA300CDF2AF9C205009F45AC /* APIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractor.swift; sourceTree = "<group>"; };
+		AA3CD2F62AFACEC200A974E8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		AA3CD2F82AFAD17700A974E8 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
+		AA3CD2FA2AFAD24A00A974E8 /* Mickey-Mouse-Street-Routes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mickey-Mouse-Street-Routes-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AA3CD2FD2AFAD75400A974E8 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		AA3CD2FF2AFC1E6600A974E8 /* StatusParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusParser.swift; sourceTree = "<group>"; };
+		AA3CD3012AFC222900A974E8 /* String+LocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LocalizedError.swift"; sourceTree = "<group>"; };
+		AA3CD3032AFC246F00A974E8 /* RequestRouteRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouteRequest.swift; sourceTree = "<group>"; };
+		AA3CD3052AFC279E00A974E8 /* WaypointPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointPreviewView.swift; sourceTree = "<group>"; };
+		AA591B772AFACA9600002816 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
+		AA591B792AFACADE00002816 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
+		AA591B7B2AFACB0E00002816 /* ServerURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
+		AA591B7E2AFACC9100002816 /* EnableTeamRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableTeamRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +137,18 @@
 		AA300C922AF9797A009F45AC /* Mickey Mouse Street Routes */ = {
 			isa = PBXGroup;
 			children = (
+				AA3CD2FC2AFAD70C00A974E8 /* Reusable Views */,
+				AA3CD2FB2AFAD6FE00A974E8 /* Models */,
+				AA3CD2FA2AFAD24A00A974E8 /* Mickey-Mouse-Street-Routes-Info.plist */,
+				AA300CDA2AF9C165009F45AC /* Networking */,
 				AA300CC02AF97B4E009F45AC /* Settings */,
 				AA300CBD2AF97B30009F45AC /* Go */,
 				AA300C932AF9797A009F45AC /* Mickey_Mouse_Street_RoutesApp.swift */,
 				AA300C952AF9797A009F45AC /* ContentView.swift */,
 				AA300C972AF9797D009F45AC /* Assets.xcassets */,
 				AA300C992AF9797D009F45AC /* Preview Content */,
-				AA300CC72AF98D74009F45AC /* Layout.swift */,
+				AA3CD2F62AFACEC200A974E8 /* LocationManager.swift */,
+				AA3CD3012AFC222900A974E8 /* String+LocalizedError.swift */,
 			);
 			path = "Mickey Mouse Street Routes";
 			sourceTree = "<group>";
@@ -151,6 +185,7 @@
 				AA300CC52AF9880D009F45AC /* GoViewModel.swift */,
 				AA300CC92AF98F1F009F45AC /* WaypointViewModel.swift */,
 				AA300CCB2AF98F31009F45AC /* WaypointView.swift */,
+				AA3CD3052AFC279E00A974E8 /* WaypointPreviewView.swift */,
 			);
 			path = Go;
 			sourceTree = "<group>";
@@ -162,6 +197,47 @@
 				AA300CC32AF97D49009F45AC /* SettingsViewModel.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		AA300CDA2AF9C165009F45AC /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AA591B7D2AFACC7C00002816 /* Requests */,
+				AA300CDB2AF9C1A9009F45AC /* NetworkRequest.swift */,
+				AA300CDD2AF9C1C9009F45AC /* HTTPMethod.swift */,
+				AA300CDF2AF9C205009F45AC /* APIInteractor.swift */,
+				AA591B772AFACA9600002816 /* URLRequestBuilder.swift */,
+				AA591B792AFACADE00002816 /* NetworkResponse.swift */,
+				AA591B7B2AFACB0E00002816 /* ServerURL.swift */,
+				AA3CD2FF2AFC1E6600A974E8 /* StatusParser.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AA3CD2FB2AFAD6FE00A974E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA3CD2FD2AFAD75400A974E8 /* Route.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AA3CD2FC2AFAD70C00A974E8 /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA300CC72AF98D74009F45AC /* Layout.swift */,
+				AA3CD2F82AFAD17700A974E8 /* CalloutView.swift */,
+			);
+			path = "Reusable Views";
+			sourceTree = "<group>";
+		};
+		AA591B7D2AFACC7C00002816 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				AA591B7E2AFACC9100002816 /* EnableTeamRequest.swift */,
+				AA3CD3032AFC246F00A974E8 /* RequestRouteRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,14 +371,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA300CC42AF97D49009F45AC /* SettingsViewModel.swift in Sources */,
+				AA3CD2F72AFACEC200A974E8 /* LocationManager.swift in Sources */,
 				AA300CCA2AF98F20009F45AC /* WaypointViewModel.swift in Sources */,
+				AA3CD3062AFC279E00A974E8 /* WaypointPreviewView.swift in Sources */,
+				AA591B782AFACA9600002816 /* URLRequestBuilder.swift in Sources */,
 				AA300CBF2AF97B40009F45AC /* GoView.swift in Sources */,
+				AA3CD3042AFC246F00A974E8 /* RequestRouteRequest.swift in Sources */,
+				AA3CD2F92AFAD17700A974E8 /* CalloutView.swift in Sources */,
+				AA300CDE2AF9C1C9009F45AC /* HTTPMethod.swift in Sources */,
 				AA300CC62AF9880D009F45AC /* GoViewModel.swift in Sources */,
+				AA300CDC2AF9C1A9009F45AC /* NetworkRequest.swift in Sources */,
 				AA300CCC2AF98F31009F45AC /* WaypointView.swift in Sources */,
+				AA300CE02AF9C205009F45AC /* APIInteractor.swift in Sources */,
+				AA591B7F2AFACC9100002816 /* EnableTeamRequest.swift in Sources */,
+				AA591B7A2AFACADE00002816 /* NetworkResponse.swift in Sources */,
 				AA300CC22AF97B59009F45AC /* SettingsView.swift in Sources */,
 				AA300CC82AF98D74009F45AC /* Layout.swift in Sources */,
+				AA3CD3002AFC1E6600A974E8 /* StatusParser.swift in Sources */,
+				AA3CD3022AFC222900A974E8 /* String+LocalizedError.swift in Sources */,
+				AA591B7C2AFACB0E00002816 /* ServerURL.swift in Sources */,
 				AA300C962AF9797A009F45AC /* ContentView.swift in Sources */,
 				AA300C942AF9797A009F45AC /* Mickey_Mouse_Street_RoutesApp.swift in Sources */,
+				AA3CD2FE2AFAD75400A974E8 /* Route.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +554,7 @@
 				DEVELOPMENT_TEAM = TM29ZMC7X2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mickey-Mouse-Street-Routes-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,6 +584,7 @@
 				DEVELOPMENT_TEAM = TM29ZMC7X2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mickey-Mouse-Street-Routes-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

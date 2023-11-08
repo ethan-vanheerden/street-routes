@@ -50,13 +50,7 @@ struct GoView: View {
             }
             
         } else {
-            VStack {
-                Text("⚠️")
-                    .font(.largeTitle)
-                Text("No team name set yet. Please create one in settings!")
-                    .font(.headline)
-                    .multilineTextAlignment(.center)
-            }
+            CalloutView(emoji: "⚠️", message: "No team name set yet. Please create one in settings!")
         }
     }
 }

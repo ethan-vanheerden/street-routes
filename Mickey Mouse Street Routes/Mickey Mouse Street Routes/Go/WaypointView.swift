@@ -12,26 +12,34 @@ struct WaypointView: View {
     
     init(teamName: String) {
         self.viewModel = WaypointViewModel(teamName: teamName)
+        Task(priority: .userInitiated) { [self] in
+            await self.viewModel.load()
+        }
     }
     
     var body: some View {
         NavigationStack {
             Group {
                 switch viewModel.viewState {
-                case .loading:
-                    VStack {
-                        ProgressView()
-                            .padding(.bottom)
-                        Text("🔎 Finding next waypoint. Hang tight...")
-                            .font(.headline)
-                    }
-                case .error:
-                    EmptyView()
+                case .loading(let message):
+                    loadingView(message: message)
+                case .error(let description):
+                    CalloutView(emoji: "😵", message: description)
                 case .loaded(let display):
-                    EmptyView()
+                    WaypointPreviewView(display: display)
                 }
             }
         }
         .navigationTitle("📍 Next Waypoint")
+    }
+    
+    @ViewBuilder
+    private func loadingView(message: String) -> some View {
+        VStack {
+            ProgressView()
+                .padding(.bottom)
+            Text(message)
+                .font(.headline)
+        }
     }
 }
