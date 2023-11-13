@@ -35,6 +35,7 @@
 		AA591B7A2AFACADE00002816 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B792AFACADE00002816 /* NetworkResponse.swift */; };
 		AA591B7C2AFACB0E00002816 /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B7B2AFACB0E00002816 /* ServerURL.swift */; };
 		AA591B7F2AFACC9100002816 /* EnableTeamRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B7E2AFACC9100002816 /* EnableTeamRequest.swift */; };
+		AAA6DAEE2B02DFFA00D4380B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6DAED2B02DFFA00D4380B /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		AA591B792AFACADE00002816 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		AA591B7B2AFACB0E00002816 /* ServerURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
 		AA591B7E2AFACC9100002816 /* EnableTeamRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableTeamRequest.swift; sourceTree = "<group>"; };
+		AAA6DAED2B02DFFA00D4380B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				AA300CC92AF98F1F009F45AC /* WaypointViewModel.swift */,
 				AA300CCB2AF98F31009F45AC /* WaypointView.swift */,
 				AA3CD3052AFC279E00A974E8 /* WaypointPreviewView.swift */,
+				AAA6DAED2B02DFFA00D4380B /* MapView.swift */,
 			);
 			path = Go;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA300CC42AF97D49009F45AC /* SettingsViewModel.swift in Sources */,
+				AAA6DAEE2B02DFFA00D4380B /* MapView.swift in Sources */,
 				AA3CD2F72AFACEC200A974E8 /* LocationManager.swift in Sources */,
 				AA300CCA2AF98F20009F45AC /* WaypointViewModel.swift in Sources */,
 				AA3CD3062AFC279E00A974E8 /* WaypointPreviewView.swift in Sources */,

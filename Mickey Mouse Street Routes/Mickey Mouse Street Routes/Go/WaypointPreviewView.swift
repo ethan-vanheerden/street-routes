@@ -18,35 +18,40 @@ struct WaypointPreviewView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: Layout.size(1)) {
             Text("Team: \(display.teamName)")
+                .bold()
                 .font(.title)
             Text("🔎 Next clue: \(display.clueName)")
                 .font(.title2)
             Text("ℹ️ \(display.clueInfo)")
                 .font(.title3)
+                .multilineTextAlignment(.leading)
+            Spacer()
             locationPin
         }
     }
     
     @ViewBuilder
     private var locationPin: some View {
-        VStack {
+        HStack {
             Spacer()
             Button {
                 goAction()
             } label: {
                 Text("📍 Take me there")
+                    .bold()
                     .font(.title2)
                     .foregroundColor(.white)
+                    .padding(Layout.size(3))
                     .background {
                         RoundedRectangle(cornerRadius: Layout.size(2))
                             .fill(.green)
                     }
             }
             
-            Text("lat: \(display.clueLatitude)")
-            Text("long: \(display.clueLongitude)")
+//            Text("lat: \(display.clueLatitude)")
+//            Text("long: \(display.clueLongitude)")
             Spacer()
         }
     }

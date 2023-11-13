@@ -43,11 +43,9 @@ struct EnableTeamRequestBody: Codable {
 // MARK: Response
 
 struct EnableTeamResponse: Codable {
-    let teamName: String
     let status: String
     
-    private enum CodingKeys: String, CodingKey {
-        case teamName = "team_name"
-        case status
-    }
+//    private enum CodingKeys: String, CodingKey {
+//        case status
+//    }
 }

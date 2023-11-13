@@ -42,22 +42,37 @@ struct RequestRouteRequestBody: Codable {
 
 // MARK: Response
 
-struct RequestRouteResponse: Codable {
-    let teamName: String
+struct RequestRouteResponse: Decodable {
     let status: String
     let clueName: String
     let clueLongitude: Double
     let clueLatitude: Double
     let clueInfo: String
-    let route: [Route] // TODO
+    let route: Route
     
     private enum CodingKeys: String, CodingKey {
-        case teamName = "team_name"
         case status
         case clueName = "clue_name"
         case clueLongitude = "clue_long"
         case clueLatitude = "clue_lat"
         case clueInfo = "clue_info"
         case route
+    }
+    
+    private enum RouteCodingKeys: String, CodingKey {
+        case routes
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        status = try container.decode(String.self, forKey: .status)
+        clueName = try container.decode(String.self, forKey: .clueName)
+        clueLongitude = try container.decode(Double.self, forKey: .clueLongitude)
+        clueLatitude = try container.decode(Double.self, forKey: .clueLatitude)
+        clueInfo = try container.decode(String.self, forKey: .clueInfo)
+        
+        let routeContainer = try container.nestedContainer(keyedBy: RouteCodingKeys.self, forKey: .route)
+        let routes = try routeContainer.decode([Route].self, forKey: .routes)
+        self.route = routes[0] // Just grab the first one
     }
 }

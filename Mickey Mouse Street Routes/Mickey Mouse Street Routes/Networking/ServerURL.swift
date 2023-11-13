@@ -9,7 +9,7 @@ import Foundation
 
 struct ServerURL {
     // TODO: This will have to be HTTPS before sensitive info can be sent/received
-    static let baseServerPath = "hh.acetyl.net"
+    static let baseServerPath = "https://hh.acetyl.net"
     
     /// Creates a URL by combining the given subpath with the `baseServerPath`.
     /// - Parameter path: The subpath to be appended to the base server path, e.g. "/my/path"
