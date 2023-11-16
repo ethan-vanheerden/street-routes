@@ -146,9 +146,11 @@ private extension WaypointViewModel {
                     currentClueLong = responseBody.clueLongitude
                     return getWaypointDisplay(from: responseBody)
                 default:
+                    let _ = try? await Task.sleep(nanoseconds: 2_000_000_000)
                     continue // Try again
                 }
             } catch {
+                let _ = try? await Task.sleep(nanoseconds: 2_000_000_000)
                 continue
             }
             
