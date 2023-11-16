@@ -50,10 +50,6 @@ struct VisitClueResponse: Codable {
 
 
 /*
- #
- # hosts dashboard webpage on flask
- # dashboard.py contains web interface to clue DB + router
-
  # disable eligibility to receive routes, e.g. if team is done while another is not. can be re-enabled either in app or on dashboard
  # responds with your next route
  @app.route("/disableTeam", methods=['POST'])
@@ -62,16 +58,5 @@ struct VisitClueResponse: Codable {
  # Returns JSON
  # {"status"    : "OK"/"ERROR XX", str }
  #  ERROR CODES: 1 = missing fields, 4 = team does not exist,
-
- # mark clue as visited from app
- @app.route("/visitClueTeam", methods=['POST'])
- # Expected JSON
- # {"team_name" : xxxx, str
- #  "clue_name" : xxxx, str
- #  "longitude" : xx.xxxxxx, float
- #  "latitude"  : xx.xxxxxx, float }
- # Returns JSON
- # {"status" : "OK"/"ERROR XX" }
- #  ERROR CODES: 1 = missing fields, 2 = invalid coordinates, 3 = too far from clue location, 4 = no such team, 5 = no such clue, 6 = already visited
 
  */
