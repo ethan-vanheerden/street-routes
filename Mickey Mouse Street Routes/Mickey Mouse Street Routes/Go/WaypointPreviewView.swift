@@ -9,12 +9,9 @@ import SwiftUI
 
 struct WaypointPreviewView: View {
     private let display: WaypointPreviewDisplay
-    private let goAction: () -> Void
     
-    init(display: WaypointPreviewDisplay,
-         goAction: @escaping () -> Void) {
+    init(display: WaypointPreviewDisplay) {
         self.display = display
-        self.goAction = goAction
     }
     
     var body: some View {
@@ -27,32 +24,6 @@ struct WaypointPreviewView: View {
             Text("ℹ️ \(display.clueInfo)")
                 .font(.title3)
                 .multilineTextAlignment(.leading)
-            Spacer()
-            locationPin
-        }
-    }
-    
-    @ViewBuilder
-    private var locationPin: some View {
-        HStack {
-            Spacer()
-            Button {
-                goAction()
-            } label: {
-                Text("📍 Take me there")
-                    .bold()
-                    .font(.title2)
-                    .foregroundColor(.white)
-                    .padding(Layout.size(3))
-                    .background {
-                        RoundedRectangle(cornerRadius: Layout.size(2))
-                            .fill(.green)
-                    }
-            }
-            
-//            Text("lat: \(display.clueLatitude)")
-//            Text("long: \(display.clueLongitude)")
-            Spacer()
         }
     }
 }

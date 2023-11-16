@@ -44,8 +44,4 @@ struct EnableTeamRequestBody: Codable {
 
 struct EnableTeamResponse: Codable {
     let status: String
-    
-//    private enum CodingKeys: String, CodingKey {
-//        case status
-//    }
 }

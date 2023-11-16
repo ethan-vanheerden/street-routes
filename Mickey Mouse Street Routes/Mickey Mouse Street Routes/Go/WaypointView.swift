@@ -10,6 +10,8 @@ import MapKit
 
 struct WaypointView: View {
     @ObservedObject private var viewModel: WaypointViewModel
+    @State private var clueVisitedSheet = false
+    @State private var getNewClueSheet = false
     
     init(teamName: String) {
         self.viewModel = WaypointViewModel(teamName: teamName)
@@ -23,9 +25,25 @@ struct WaypointView: View {
             viewStateView
         }
         .navigationTitle("📍 Next Waypoint")
-        .fullScreenCover(isPresented: $viewModel.isNavigating) {
-            navigationView
-                .edgesIgnoringSafeArea(.all)
+        .confirmationDialog("Mark as visited?",
+                            isPresented: $clueVisitedSheet) {
+            Button("Visit"){
+                Task(priority: .userInitiated) { [self] in
+                    await self.viewModel.markClueVisited()
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                clueVisitedSheet = false
+            }
+        }.confirmationDialog("", isPresented: $getNewClueSheet) {
+            Button("Get new clue") {
+                Task(priority: .userInitiated) { [self] in
+                    await self.viewModel.getNewClue()
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                getNewClueSheet = false
+            }
         }
     }
     
@@ -37,8 +55,13 @@ struct WaypointView: View {
         case .error(let description):
             CalloutView(emoji: "😵", message: description)
         case .loaded(let display):
-            WaypointPreviewView(display: display) { viewModel.startNavigating() }
-                .padding(.horizontal, Layout.size(2))
+            VStack {
+                Spacer()
+                WaypointPreviewView(display: display)
+                    .padding(.horizontal, Layout.size(2))
+                Spacer()
+                buttons
+            }
         }
     }
     
@@ -53,26 +76,23 @@ struct WaypointView: View {
     }
     
     @ViewBuilder
-    private var navigationView: some View {
-        switch viewModel.navigationState {
-        case .loading(let message):
-            loadingView(message: message)
-        case .error(let description):
-            CalloutView(emoji: "😵", message: description)
-        case .loaded(let display):
-            mapView(display: display)
+    private var buttons: some View {
+        if viewModel.isNavigating {
+            VStack {
+                BigButton(text: "✅ Mark clue as visited",
+                          backgroundColor: .green) {
+                    clueVisitedSheet = true
+                }
+                BigButton(text: "❌ Request different clue",
+                          backgroundColor: .green) {
+                    getNewClueSheet = true
+                }
+            }
+        } else {
+            BigButton(text: "📍 Take me there",
+                      backgroundColor: .green) {
+                viewModel.startNavigating()
+            }
         }
-    }
-    
-    @ViewBuilder
-    private func mapView(display: NavigationDisplay) -> some View {
-        Map(coordinateRegion: .constant(MKCoordinateRegion(
-            center: .init(latitude: 37.334_900,longitude: -122.009_020),
-            span: .init(latitudeDelta: 0.2, longitudeDelta: 0.2)
-        )),
-            showsUserLocation: true,
-            userTrackingMode: .constant(.follow))
-//        MapView(routeCoordinates: display.polyLine,
-//                userLocation: display.userLocation)
     }
 }

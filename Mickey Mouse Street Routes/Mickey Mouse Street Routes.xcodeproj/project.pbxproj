@@ -24,6 +24,7 @@
 		AA300CDC2AF9C1A9009F45AC /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CDB2AF9C1A9009F45AC /* NetworkRequest.swift */; };
 		AA300CDE2AF9C1C9009F45AC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CDD2AF9C1C9009F45AC /* HTTPMethod.swift */; };
 		AA300CE02AF9C205009F45AC /* APIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CDF2AF9C205009F45AC /* APIInteractor.swift */; };
+		AA3520192B05A51F00661758 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3520182B05A51F00661758 /* BigButton.swift */; };
 		AA3CD2F72AFACEC200A974E8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2F62AFACEC200A974E8 /* LocationManager.swift */; };
 		AA3CD2F92AFAD17700A974E8 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2F82AFAD17700A974E8 /* CalloutView.swift */; };
 		AA3CD2FE2AFAD75400A974E8 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2FD2AFAD75400A974E8 /* Route.swift */; };
@@ -35,7 +36,6 @@
 		AA591B7A2AFACADE00002816 /* NetworkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B792AFACADE00002816 /* NetworkResponse.swift */; };
 		AA591B7C2AFACB0E00002816 /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B7B2AFACB0E00002816 /* ServerURL.swift */; };
 		AA591B7F2AFACC9100002816 /* EnableTeamRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA591B7E2AFACC9100002816 /* EnableTeamRequest.swift */; };
-		AAA6DAEE2B02DFFA00D4380B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6DAED2B02DFFA00D4380B /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +76,7 @@
 		AA300CDB2AF9C1A9009F45AC /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		AA300CDD2AF9C1C9009F45AC /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		AA300CDF2AF9C205009F45AC /* APIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractor.swift; sourceTree = "<group>"; };
+		AA3520182B05A51F00661758 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		AA3CD2F62AFACEC200A974E8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		AA3CD2F82AFAD17700A974E8 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
 		AA3CD2FA2AFAD24A00A974E8 /* Mickey-Mouse-Street-Routes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mickey-Mouse-Street-Routes-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -88,7 +89,6 @@
 		AA591B792AFACADE00002816 /* NetworkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponse.swift; sourceTree = "<group>"; };
 		AA591B7B2AFACB0E00002816 /* ServerURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
 		AA591B7E2AFACC9100002816 /* EnableTeamRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableTeamRequest.swift; sourceTree = "<group>"; };
-		AAA6DAED2B02DFFA00D4380B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +188,6 @@
 				AA300CC92AF98F1F009F45AC /* WaypointViewModel.swift */,
 				AA300CCB2AF98F31009F45AC /* WaypointView.swift */,
 				AA3CD3052AFC279E00A974E8 /* WaypointPreviewView.swift */,
-				AAA6DAED2B02DFFA00D4380B /* MapView.swift */,
 			);
 			path = Go;
 			sourceTree = "<group>";
@@ -230,6 +229,7 @@
 			children = (
 				AA300CC72AF98D74009F45AC /* Layout.swift */,
 				AA3CD2F82AFAD17700A974E8 /* CalloutView.swift */,
+				AA3520182B05A51F00661758 /* BigButton.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -374,7 +374,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA300CC42AF97D49009F45AC /* SettingsViewModel.swift in Sources */,
-				AAA6DAEE2B02DFFA00D4380B /* MapView.swift in Sources */,
 				AA3CD2F72AFACEC200A974E8 /* LocationManager.swift in Sources */,
 				AA300CCA2AF98F20009F45AC /* WaypointViewModel.swift in Sources */,
 				AA3CD3062AFC279E00A974E8 /* WaypointPreviewView.swift in Sources */,
@@ -382,6 +381,7 @@
 				AA300CBF2AF97B40009F45AC /* GoView.swift in Sources */,
 				AA3CD3042AFC246F00A974E8 /* RequestRouteRequest.swift in Sources */,
 				AA3CD2F92AFAD17700A974E8 /* CalloutView.swift in Sources */,
+				AA3520192B05A51F00661758 /* BigButton.swift in Sources */,
 				AA300CDE2AF9C1C9009F45AC /* HTTPMethod.swift in Sources */,
 				AA300CC62AF9880D009F45AC /* GoViewModel.swift in Sources */,
 				AA300CDC2AF9C1A9009F45AC /* NetworkRequest.swift in Sources */,
@@ -564,6 +564,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,6 +595,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

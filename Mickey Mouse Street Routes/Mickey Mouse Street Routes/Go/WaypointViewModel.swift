@@ -7,26 +7,19 @@
 
 import Foundation
 import CoreLocation
-import Combine
+import MapKit
 
 final class WaypointViewModel: ObservableObject {
     @Published var viewState: WaypointViewState = .loading("Enabling your team...")
-    @Published var navigationState: NavigationViewState = .loading("Loading map information...")
     @Published var isNavigating = false
     private var locationManager = LocationManager()
     private var route: Route?
-    private var cancellables: Set<AnyCancellable> = []
     
     private var teamName: String
     
     init(teamName: String) {
         self.teamName = teamName
         locationManager.requestSingleLocationUpdate()
-        locationManager.$currentLocation
-            .sink { [weak self] updatedLocation in
-                self?.updateUserLocation(currentLocation: updatedLocation)
-            }
-            .store(in: &cancellables)
     }
     
     func load() async {
@@ -50,7 +43,15 @@ final class WaypointViewModel: ObservableObject {
     
     func startNavigating() {
         isNavigating = true
-        updateNavigationState(new: updateNavigation())
+        openMaps()
+    }
+    
+    func markClueVisited() async {
+        // TODO: implement
+    }
+    
+    func getNewClue() async {
+        // TODO: implement
     }
 }
 
@@ -66,18 +67,10 @@ private extension WaypointViewModel {
         }
     }
     
-    func updateNavigationState(new: NavigationViewState) {
-        Task(priority: .userInitiated) {
-            await MainActor.run {
-                self.navigationState = new
-            }
-        }
-    }
-    
     func registerTeam(currentLocation: CLLocationCoordinate2D) async throws {
         let enableTeamBody = EnableTeamRequestBody(teamName: teamName,
-                                                   longitude: currentLocation.longitude.magnitude,
-                                                   latitude: currentLocation.latitude.magnitude)
+                                                   longitude: currentLocation.longitude,
+                                                   latitude: currentLocation.latitude)
         let enableTeamRequest = EnableTeamRequest(requestBody: enableTeamBody)
         
         let response = try await APIInteractor.performRequest(with: enableTeamRequest)
@@ -95,25 +88,28 @@ private extension WaypointViewModel {
     
     func getRoute(currentLocation: CLLocationCoordinate2D) async throws -> WaypointPreviewDisplay {
         let requestBody = RequestRouteRequestBody(teamName: teamName,
-                                                  longitude: currentLocation.longitude.magnitude,
-                                                  latitude: currentLocation.latitude.magnitude)
+                                                  longitude: currentLocation.longitude,
+                                                  latitude: currentLocation.latitude)
         let request = RequestRouteRequest(requestBody: requestBody)
         
         while true {
             // Put in while loop since "ERROR 3" means it's still be calculated
-            let response = try await APIInteractor.performRequest(with: request)
-            let responseBody = response.responseObject
-            let status = StatusParser.parseStatus(responseBody.status)
-            
-            switch status {
-            case .ok:
-                route = responseBody.route
-                return getWaypointDisplay(from: responseBody)
-            case .error(let message) where message != "3":
-                throw "Error getting next waypoint: \(message)"
-            default:
-                continue // Try again
+            do {
+                let response = try await APIInteractor.performRequest(with: request)
+                let responseBody = response.responseObject
+                let status = StatusParser.parseStatus(responseBody.status)
+                
+                switch status {
+                case .ok:
+                    route = responseBody.route
+                    return getWaypointDisplay(from: responseBody)
+                default:
+                    continue // Try again
+                }
+            } catch {
+                continue
             }
+            
         }
     }
     
@@ -125,29 +121,21 @@ private extension WaypointViewModel {
                      clueInfo: response.clueInfo)
     }
     
-    func updateUserLocation(currentLocation: CLLocation?) {
-        updateNavigationState(new: updateNavigation(currentLocation: currentLocation))
-    }
-    
-    func updateNavigation(currentLocation: CLLocation? = nil) -> NavigationViewState {
-        // Grab current location from manager if not given
-        guard let currentLocation = currentLocation ?? locationManager.currentLocation,
-              let route = self.route else {
-            return .error("Unable to start navigation.")
+    func openMaps() {
+        guard let location = locationManager.currentLocation else {
+            updateViewState(new: .error("Could not get current location"))
+            return
         }
-        
-        let currentCoord = currentLocation.coordinate
-        let currentLocation2D: CLLocationCoordinate2D = .init(latitude: currentCoord.latitude,
-                                                              longitude: currentCoord.longitude)
-        
-        let coords: [CLLocationCoordinate2D] = route.coordinates.map {
-            return .init(latitude: $0.latitude, longitude: $0.longitude)
-        }
-        
-        let display = NavigationDisplay(userLocation: currentLocation2D,
-                                        polyLine: coords)
-        
-        return .loaded(display)
+        let coordinate = location.coordinate
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: .init(latitude: coordinate.latitude,
+                                                                         longitude: coordinate.longitude)))
+        mapItem.name = "Clue name" // Set a name for the location
+
+        // You can also specify various options for launching the map
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
+
+        // Open the Maps app with the specified location
+        mapItem.openInMaps(launchOptions: launchOptions)
     }
 }
 
@@ -163,15 +151,4 @@ struct WaypointPreviewDisplay {
     let clueLongitude: String
     let clueLatitude: String
     let clueInfo: String
-}
-
-enum NavigationViewState {
-    case loading(_ message: String)
-    case error(_ description: String)
-    case loaded(NavigationDisplay)
-}
-
-struct NavigationDisplay {
-    let userLocation: CLLocationCoordinate2D
-    let polyLine: [CLLocationCoordinate2D]
 }

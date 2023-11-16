@@ -37,7 +37,8 @@ struct Route: Decodable {
         while !nestedCoordinates.isAtEnd {
             let coordinateArray = try nestedCoordinates.decode([Double].self)
             guard coordinateArray.count == 2 else {
-                throw DecodingError.dataCorruptedError(forKey: .coordinates, in: geometryContainer, debugDescription: "Invalid coordinate array")
+                throw DecodingError.dataCorruptedError(forKey: .coordinates, in: geometryContainer, 
+                                                       debugDescription: "Invalid coordinate array")
             }
 
             let longitude = coordinateArray[0]
