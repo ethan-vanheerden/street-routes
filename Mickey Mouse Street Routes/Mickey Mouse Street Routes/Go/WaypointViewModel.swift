@@ -10,7 +10,7 @@ import CoreLocation
 import MapKit
 
 final class WaypointViewModel: ObservableObject {
-    @Published var viewState: WaypointViewState = .loading("Enabling your team...")
+    @Published var viewState: WaypointViewState
     @Published var isNavigating = false
     private var locationManager = LocationManager()
     private var currentClueName: String = ""
@@ -22,6 +22,7 @@ final class WaypointViewModel: ObservableObject {
     init(teamName: String) {
         self.teamName = teamName
         locationManager.requestSingleLocationUpdate()
+        self.viewState = .loading("Enabling your team...")
     }
     
     func load() async {
@@ -30,27 +31,29 @@ final class WaypointViewModel: ObservableObject {
             // First register the team
             do {
                 try await registerTeam(currentLocation: coordinate)
-                updateViewState(new: .loading("🔎 Finding next waypoint. Hang tight..."))
+                await updateViewState(new: .loading("🔎 Finding next waypoint. Hang tight..."))
                 
                 // Get the team's first route
                 let display = try await getRoute(currentLocation: coordinate)
-                updateViewState(new: .loaded(display))
+                await updateViewState(new: .loaded(display))
             } catch let error {
-                updateViewState(new: .error("Error getting waypoint: \(error)"))
+                await updateViewState(new: .error("Error getting waypoint: \(error)"))
             }
         } else {
-            updateViewState(new: .error("Unable to get device location."))
+            await updateViewState(new: .error("Unable to get device location."))
         }
     }
     
-    func startNavigating() {
-        isNavigating = true
+    func startNavigating() async {
+        await MainActor.run {
+            isNavigating = true
+        }
         openMaps()
     }
     
     func markClueVisited() async {
         guard let currentLocation = locationManager.currentLocation else {
-            updateViewState(new: .error("Unable to get device location."))
+            await updateViewState(new: .error("Unable to get device location."))
             return
         }
         do {
@@ -70,27 +73,31 @@ final class WaypointViewModel: ObservableObject {
             case .error(let message):
                 throw message
             default:
-                isNavigating = false
+                await MainActor.run {
+                    isNavigating = false
+                }
             }
         } catch let error {
-            updateViewState(new: .error("Error marking clue as visited: \(error), contact HQ."))
+            await updateViewState(new: .error("Error marking clue as visited: \(error), contact HQ."))
         }
+        
+        await getNewClue()
     }
     
     func getNewClue() async {
         guard let currentLocation = locationManager.currentLocation else {
-            updateViewState(new: .error("Unable to get device location."))
+            await updateViewState(new: .error("Unable to get device location."))
             return
         }
         
-        updateViewState(new: .loading("🔎 Finding next waypoint. Hang tight..."))
+        await updateViewState(new: .loading("🔎 Finding next waypoint. Hang tight..."))
         
         do {
             let coordinate = currentLocation.coordinate
             let display = try await getRoute(currentLocation: coordinate)
-            updateViewState(new: .loaded(display))
+            await updateViewState(new: .loaded(display))
         } catch let error {
-            updateViewState(new: .error("Error getting waypoint: \(error)"))
+            await updateViewState(new: .error("Error getting waypoint: \(error)"))
         }
     }
 }
@@ -99,11 +106,9 @@ final class WaypointViewModel: ObservableObject {
 
 private extension WaypointViewModel {
     
-    func updateViewState(new: WaypointViewState) {
-        Task(priority: .userInitiated) {
-            await MainActor.run {
-                self.viewState = new
-            }
+    func updateViewState(new: WaypointViewState) async {
+        await MainActor.run {
+            self.viewState = new
         }
     }
     
@@ -166,17 +171,13 @@ private extension WaypointViewModel {
     }
     
     func openMaps() {
-        guard let location = locationManager.currentLocation else {
-            updateViewState(new: .error("Could not get current location"))
-            return
-        }
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: .init(latitude: currentClueLat,
                                                                          longitude: currentClueLong)))
         mapItem.name = currentClueName// Set a name for the location
-
+        
         // You can also specify various options for launching the map
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]
-
+        
         // Open the Maps app with the specified location
         mapItem.openInMaps(launchOptions: launchOptions)
     }

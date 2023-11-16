@@ -99,7 +99,9 @@ struct WaypointView: View {
         } else {
             BigButton(text: "📍 Take me there",
                       backgroundColor: .green) {
-                viewModel.startNavigating()
+                Task(priority: .userInitiated) {
+                    await viewModel.startNavigating()
+                }
             }
         }
     }
