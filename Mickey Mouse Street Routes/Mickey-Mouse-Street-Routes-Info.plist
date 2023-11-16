@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>CFBundleIdentifier</key>
-	<string>evh.Mickey-Mouse-Street-Routes</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Needs your location in order to send you waypoints and real time updates.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Needs your location in order to send you waypoints and real time updates.</string>
-</dict>
+<dict/>
 </plist>
