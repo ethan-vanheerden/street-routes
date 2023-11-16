@@ -13,7 +13,9 @@ final class WaypointViewModel: ObservableObject {
     @Published var viewState: WaypointViewState = .loading("Enabling your team...")
     @Published var isNavigating = false
     private var locationManager = LocationManager()
-    private var route: Route?
+    private var currentClueName: String = ""
+    private var currentClueLat: Double = 0
+    private var currentClueLong: Double = 0
     
     private var teamName: String
     
@@ -47,11 +49,49 @@ final class WaypointViewModel: ObservableObject {
     }
     
     func markClueVisited() async {
-        // TODO: implement
+        guard let currentLocation = locationManager.currentLocation else {
+            updateViewState(new: .error("Unable to get device location."))
+            return
+        }
+        do {
+            let coordinate = currentLocation.coordinate
+            let visitBody = VisitClueRequestBody(teamName: teamName,
+                                                 clueName: currentClueName,
+                                                 longitude: coordinate.longitude,
+                                                 latitude: coordinate.latitude)
+            
+            let visitRequest = VisitClueRequest(requestBody: visitBody)
+            
+            let response = try await APIInteractor.performRequest(with: visitRequest)
+            let status = StatusParser.parseStatus(response.responseObject.status)
+            
+            switch status {
+                // Don't throw error if we get the already registered error
+            case .error(let message):
+                throw message
+            default:
+                isNavigating = false
+            }
+        } catch let error {
+            updateViewState(new: .error("Error marking clue as visited: \(error), contact HQ."))
+        }
     }
     
     func getNewClue() async {
-        // TODO: implement
+        guard let currentLocation = locationManager.currentLocation else {
+            updateViewState(new: .error("Unable to get device location."))
+            return
+        }
+        
+        updateViewState(new: .loading("🔎 Finding next waypoint. Hang tight..."))
+        
+        do {
+            let coordinate = currentLocation.coordinate
+            let display = try await getRoute(currentLocation: coordinate)
+            updateViewState(new: .loaded(display))
+        } catch let error {
+            updateViewState(new: .error("Error getting waypoint: \(error)"))
+        }
     }
 }
 
@@ -101,7 +141,9 @@ private extension WaypointViewModel {
                 
                 switch status {
                 case .ok:
-                    route = responseBody.route
+                    currentClueName = responseBody.clueName
+                    currentClueLat = responseBody.clueLatitude
+                    currentClueLong = responseBody.clueLongitude
                     return getWaypointDisplay(from: responseBody)
                 default:
                     continue // Try again
@@ -126,10 +168,9 @@ private extension WaypointViewModel {
             updateViewState(new: .error("Could not get current location"))
             return
         }
-        let coordinate = location.coordinate
-        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: .init(latitude: coordinate.latitude,
-                                                                         longitude: coordinate.longitude)))
-        mapItem.name = "Clue name" // Set a name for the location
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: .init(latitude: currentClueLat,
+                                                                         longitude: currentClueLong)))
+        mapItem.name = currentClueName// Set a name for the location
 
         // You can also specify various options for launching the map
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking]

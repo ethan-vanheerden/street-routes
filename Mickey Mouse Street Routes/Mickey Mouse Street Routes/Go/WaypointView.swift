@@ -36,7 +36,7 @@ struct WaypointView: View {
                 clueVisitedSheet = false
             }
         }.confirmationDialog("", isPresented: $getNewClueSheet) {
-            Button("Get new clue") {
+            Button("Get new clue", role: .destructive) {
                 Task(priority: .userInitiated) { [self] in
                     await self.viewModel.getNewClue()
                 }
@@ -53,7 +53,15 @@ struct WaypointView: View {
         case .loading(let message):
             loadingView(message: message)
         case .error(let description):
-            CalloutView(emoji: "😵", message: description)
+            VStack {
+                CalloutView(emoji: "😵", message: description)
+                BigButton(text: "Reload",
+                          backgroundColor: .orange) {
+                    Task(priority: .userInitiated) {
+                        await viewModel.load()
+                    }
+                }
+            }
         case .loaded(let display):
             VStack {
                 Spacer()
@@ -84,7 +92,7 @@ struct WaypointView: View {
                     clueVisitedSheet = true
                 }
                 BigButton(text: "❌ Request different clue",
-                          backgroundColor: .green) {
+                          backgroundColor: .yellow) {
                     getNewClueSheet = true
                 }
             }

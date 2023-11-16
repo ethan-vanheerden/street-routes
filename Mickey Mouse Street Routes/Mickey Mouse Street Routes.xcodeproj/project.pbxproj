@@ -25,6 +25,7 @@
 		AA300CDE2AF9C1C9009F45AC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CDD2AF9C1C9009F45AC /* HTTPMethod.swift */; };
 		AA300CE02AF9C205009F45AC /* APIInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA300CDF2AF9C205009F45AC /* APIInteractor.swift */; };
 		AA3520192B05A51F00661758 /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3520182B05A51F00661758 /* BigButton.swift */; };
+		AA35201B2B05B24500661758 /* VistClueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA35201A2B05B24500661758 /* VistClueRequest.swift */; };
 		AA3CD2F72AFACEC200A974E8 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2F62AFACEC200A974E8 /* LocationManager.swift */; };
 		AA3CD2F92AFAD17700A974E8 /* CalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2F82AFAD17700A974E8 /* CalloutView.swift */; };
 		AA3CD2FE2AFAD75400A974E8 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3CD2FD2AFAD75400A974E8 /* Route.swift */; };
@@ -77,6 +78,7 @@
 		AA300CDD2AF9C1C9009F45AC /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		AA300CDF2AF9C205009F45AC /* APIInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInteractor.swift; sourceTree = "<group>"; };
 		AA3520182B05A51F00661758 /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
+		AA35201A2B05B24500661758 /* VistClueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistClueRequest.swift; sourceTree = "<group>"; };
 		AA3CD2F62AFACEC200A974E8 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		AA3CD2F82AFAD17700A974E8 /* CalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutView.swift; sourceTree = "<group>"; };
 		AA3CD2FA2AFAD24A00A974E8 /* Mickey-Mouse-Street-Routes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mickey-Mouse-Street-Routes-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -239,6 +241,7 @@
 			children = (
 				AA591B7E2AFACC9100002816 /* EnableTeamRequest.swift */,
 				AA3CD3032AFC246F00A974E8 /* RequestRouteRequest.swift */,
+				AA35201A2B05B24500661758 /* VistClueRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				AA3520192B05A51F00661758 /* BigButton.swift in Sources */,
 				AA300CDE2AF9C1C9009F45AC /* HTTPMethod.swift in Sources */,
 				AA300CC62AF9880D009F45AC /* GoViewModel.swift in Sources */,
+				AA35201B2B05B24500661758 /* VistClueRequest.swift in Sources */,
 				AA300CDC2AF9C1A9009F45AC /* NetworkRequest.swift in Sources */,
 				AA300CCC2AF98F31009F45AC /* WaypointView.swift in Sources */,
 				AA300CE02AF9C205009F45AC /* APIInteractor.swift in Sources */,
