@@ -11,8 +11,8 @@ final class GoViewModel: ObservableObject {
     @Published var viewState: GoViewState = .loading
     
     func load() {
-        let teamName = UserDefaults().object(forKey: "team_name") as? String
-        let display = GoViewDisplay(teamName: teamName)
+        let teamId = UserDefaults().object(forKey: "team_name") as? Int
+        let display = GoViewDisplay(teamId: teamId)
         updateViewState(new: .loaded(display))
     }
     
@@ -31,5 +31,5 @@ enum GoViewState {
 }
 
 struct GoViewDisplay {
-    let teamName: String?
+    let teamId: Int?
 }

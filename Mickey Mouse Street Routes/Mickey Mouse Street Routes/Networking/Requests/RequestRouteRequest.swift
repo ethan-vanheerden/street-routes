@@ -29,12 +29,12 @@ struct RequestRouteRequest: NetworkRequest {
 // MARK: - Body
 
 struct RequestRouteRequestBody: Codable {
-    let teamName: String
+    let teamId: Int
     let longitude: Double
     let latitude: Double
     
     private enum CodingKeys: String, CodingKey {
-        case teamName = "team_name"
+        case teamId = "team_index"
         case longitude
         case latitude
     }

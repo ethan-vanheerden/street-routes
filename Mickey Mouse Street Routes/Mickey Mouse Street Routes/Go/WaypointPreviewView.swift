@@ -16,7 +16,7 @@ struct WaypointPreviewView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: Layout.size(1)) {
-            Text("Team: \(display.teamName)")
+            Text("Team \(String(display.teamId))")
                 .bold()
                 .font(.title)
             Text("🔎 Next clue: \(display.clueName)")

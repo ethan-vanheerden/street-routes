@@ -29,14 +29,14 @@ struct GoView: View {
     
     @ViewBuilder
     private func loadedView(display: GoViewDisplay) -> some View {
-        if let teamName = display.teamName,
-           !teamName.isEmpty{
+        if let teamId = display.teamId,
+           !(teamId == 0){
             VStack {
                 Spacer()
-                Text("Current Team: \(teamName)")
+                Text("Team \(String(teamId))")
                     .font(.title)
                     .bold()
-                NavigationLink(destination: WaypointView(teamName: teamName)) {
+                NavigationLink(destination: WaypointView(teamId: teamId)) {
                     ZStack {
                         RoundedRectangle(cornerRadius: Layout.size(2))
                             .fill(.green)

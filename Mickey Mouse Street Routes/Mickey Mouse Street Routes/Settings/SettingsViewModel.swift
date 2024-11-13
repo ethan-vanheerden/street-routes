@@ -8,14 +8,15 @@
 import Foundation
 
 final class SettingsViewModel: ObservableObject {
-    @Published var teamName: String?
+    @Published var teamId: Int?
     
     init() {
-        self.teamName = UserDefaults().string(forKey: "team_name")
+        self.teamId = UserDefaults().integer(forKey: "team_name")
     }
     
-    func updateTeamName(newName: String) {
-        UserDefaults().set(newName, forKey: "team_name")
-        self.teamName = newName
+    func updateTeamId(newId: Int) {
+        UserDefaults().set(newId, forKey: "team_name")
+        self.teamId = newId
     }
 }
+

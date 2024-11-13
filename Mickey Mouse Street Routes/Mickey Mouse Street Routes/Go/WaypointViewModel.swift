@@ -12,15 +12,16 @@ import MapKit
 final class WaypointViewModel: ObservableObject {
     @Published var viewState: WaypointViewState
     @Published var isNavigating = false
-    private var locationManager = LocationManager()
+    private var locationManager : LocationManager
     private var currentClueName: String = ""
     private var currentClueLat: Double = 0
     private var currentClueLong: Double = 0
     
-    private var teamName: String
+    private var teamId: Int
     
-    init(teamName: String) {
-        self.teamName = teamName
+    init(teamId: Int) {
+        self.teamId = teamId
+        self.locationManager = LocationManager(teamId: self.teamId)
         locationManager.requestSingleLocationUpdate()
         self.viewState = .loading("Enabling your team...")
     }
@@ -28,6 +29,7 @@ final class WaypointViewModel: ObservableObject {
     func load() async {
         if let currentLocation = locationManager.currentLocation {
             let coordinate = currentLocation.coordinate
+            print(coordinate)
             // First register the team
             do {
                 try await registerTeam(currentLocation: coordinate)
@@ -58,7 +60,7 @@ final class WaypointViewModel: ObservableObject {
         }
         do {
             let coordinate = currentLocation.coordinate
-            let visitBody = VisitClueRequestBody(teamName: teamName,
+            let visitBody = VisitClueRequestBody(teamId: teamId,
                                                  clueName: currentClueName,
                                                  longitude: coordinate.longitude,
                                                  latitude: coordinate.latitude)
@@ -113,7 +115,7 @@ private extension WaypointViewModel {
     }
     
     func registerTeam(currentLocation: CLLocationCoordinate2D) async throws {
-        let enableTeamBody = EnableTeamRequestBody(teamName: teamName,
+        let enableTeamBody = EnableTeamRequestBody(teamId: teamId,
                                                    longitude: currentLocation.longitude,
                                                    latitude: currentLocation.latitude)
         let enableTeamRequest = EnableTeamRequest(requestBody: enableTeamBody)
@@ -132,14 +134,14 @@ private extension WaypointViewModel {
     }
     
     func getRoute(currentLocation: CLLocationCoordinate2D) async throws -> WaypointPreviewDisplay {
-        let requestBody = RequestRouteRequestBody(teamName: teamName,
-                                                  longitude: currentLocation.longitude,
-                                                  latitude: currentLocation.latitude)
-        let request = RequestRouteRequest(requestBody: requestBody)
-        
         while true {
             // Put in while loop since "ERROR 3" means it's still be calculated
             do {
+                let requestBody = RequestRouteRequestBody(teamId: teamId,
+                                                          longitude: currentLocation.longitude,
+                                                          latitude: currentLocation.latitude)
+                let request = RequestRouteRequest(requestBody: requestBody)
+                
                 let response = try await APIInteractor.performRequest(with: request)
                 let responseBody = response.responseObject
                 let status = StatusParser.parseStatus(responseBody.status)
@@ -151,11 +153,11 @@ private extension WaypointViewModel {
                     currentClueLong = responseBody.clueLongitude
                     return getWaypointDisplay(from: responseBody)
                 default:
-                    let _ = try? await Task.sleep(nanoseconds: 2_000_000_000)
+                    let _ = try? await Task.sleep(nanoseconds: 20_000_000_000)
                     continue // Try again
                 }
             } catch {
-                let _ = try? await Task.sleep(nanoseconds: 2_000_000_000)
+                let _ = try? await Task.sleep(nanoseconds: 20_000_000_000)
                 continue
             }
             
@@ -163,7 +165,7 @@ private extension WaypointViewModel {
     }
     
     func getWaypointDisplay(from response: RequestRouteResponse) -> WaypointPreviewDisplay {
-        return .init(teamName: teamName,
+        return .init(teamId: teamId,
                      clueName: response.clueName,
                      clueLongitude: String(response.clueLongitude),
                      clueLatitude: String(response.clueLatitude),
@@ -190,7 +192,7 @@ enum WaypointViewState {
 }
 
 struct WaypointPreviewDisplay {
-    let teamName: String
+    let teamId: Int
     let clueName: String
     let clueLongitude: String
     let clueLatitude: String

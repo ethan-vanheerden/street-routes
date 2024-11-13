@@ -1,22 +1,22 @@
 //
-//  EnableTeamRequest.swift
+//  UpdateTeamLocationRequest.swift
 //  Mickey Mouse Street Routes
 //
-//  Created by Ethan Van Heerden on 11/7/23.
+//  Created by Nikhil Goel on 11/13/24.
 //
 
 import Foundation
 
-struct EnableTeamRequest: NetworkRequest {
-    typealias Response = EnableTeamResponse
-    private let requestBody: EnableTeamRequestBody
+struct UpdateTeamLocationRequest: NetworkRequest {
+    typealias Response = UpdateTeamLocationResponse
+    private let requestBody: UpdateTeamLocationRequestBody
     
-    init(requestBody: EnableTeamRequestBody) {
+    init(requestBody: UpdateTeamLocationRequestBody) {
         self.requestBody = requestBody
     }
     
     func createRequest() -> URLRequest {
-        let url = ServerURL.createURL(path: "/enableTeam")
+        let url = ServerURL.createURL(path: "/updateTeamLocation")
         return URLRequestBuilder(url: url)
             .setHTTPMethod(.post)
             .setJSONContent()
@@ -28,7 +28,7 @@ struct EnableTeamRequest: NetworkRequest {
 
 // MARK: - Body
 
-struct EnableTeamRequestBody: Codable {
+struct UpdateTeamLocationRequestBody: Codable {
     let teamId: Int
     let longitude: Double
     let latitude: Double
@@ -42,6 +42,7 @@ struct EnableTeamRequestBody: Codable {
 
 // MARK: Response
 
-struct EnableTeamResponse: Codable {
+struct UpdateTeamLocationResponse: Codable {
     let status: String
 }
+

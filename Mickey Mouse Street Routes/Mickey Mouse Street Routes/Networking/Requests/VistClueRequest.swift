@@ -29,13 +29,13 @@ struct VisitClueRequest: NetworkRequest {
 // MARK: - Body
 
 struct VisitClueRequestBody: Codable {
-    let teamName: String
+    let teamId: Int
     let clueName: String
     let longitude: Double
     let latitude: Double
     
     private enum CodingKeys: String, CodingKey {
-        case teamName = "team_name"
+        case teamId = "team_index"
         case clueName = "clue_name"
         case longitude
         case latitude

@@ -13,8 +13,8 @@ struct WaypointView: View {
     @State private var clueVisitedSheet = false
     @State private var getNewClueSheet = false
     
-    init(teamName: String) {
-        self.viewModel = WaypointViewModel(teamName: teamName)
+    init(teamId: Int) {
+        self.viewModel = WaypointViewModel(teamId: teamId)
         Task(priority: .userInitiated) { [self] in
             await self.viewModel.load()
         }
